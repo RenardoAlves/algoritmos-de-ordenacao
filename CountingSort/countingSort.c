@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define SIZE 6
 
@@ -13,7 +14,10 @@ int main()
         }
     }
    
-    int freq[maxData+1];
+    //(Funciona apenas em C99 e posterior)
+    //int freq[maxData+1]; 
+    
+    int *freq = malloc((maxData+1) * sizeof(int));
    
     for (int i = 0; i <= maxData; i++) {
         freq[i] = 0;
